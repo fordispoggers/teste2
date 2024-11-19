@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Online - Profissões</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: 
+                linear-gradient(to bottom, rgba(252, 255, 252, 0.5) 50%, rgba(2, 133, 37, 0.8) 90%), 
+                url('imagens/fundo.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .profissoes {
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .course-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .course-title {
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .course-duration {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .botão {
+            background-color: #4CAF50;
+            border-radius: 10px;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .botão:hover {
+            background-color: #3e8e41;
+        }
+
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-bar input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cursos Online</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Buscar curso..." onkeyup="filterCourses()">
+        </div>
+
+        <div class="profissoes">
+            <h2>Profissões e aprofundamentos</h2>
+            <div class="courses-grid" id="courses-grid">
+                <!-- Card 1 -->
+                <a href="economia.html">
+                    <div class="course-card">
+                        <img src="imagens/economia.png" alt="Economia">
+                        <div class="course-title">Por dentro da Economia</div>
+                        <div class="course-duration">12 meses</div>
+                    </div>
+                </a>
+                <!-- Card 2 -->
+                <a href="Softskills.html">
+                    <div class="course-card">
+                        <img src="imagens/softskills.png" alt="Softskills">
+                        <div class="course-title">Inovação e Gestão</div>
+                        <div class="course-duration">12 meses</div>
+                    </div>
+                </a>
+                <!-- Card 3 -->
+                <a href="Ferramentas.html">
+                    <div class="course-card">
+                        <img src="imagens/ferramentas.png" alt="Ferramentas de trabalho">
+                        <div class="course-title">Ferramentas mais importantes nas empresas</div>
+                        <div class="course-duration">6 meses</div>
+                    </div>
+                </a>
+                <!-- Card 4 -->
+                <a href="Informatica.html">
+                    <div class="course-card">
+                        <img src="imagens/informatica.png" alt="Curso de Informática">
+                        <div class="course-title">Da teoria até o virtual</div>
+                        <div class="course-duration">6 meses</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="Suporte e Dúvidas">
+                <a href="Ajuda.html" class="botão">Me Ajude</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterCourses() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const courses = document.querySelectorAll('.course-card');
+
+            courses.forEach(course => {
+                const title = course.querySelector('.course-title').textContent.toLowerCase();
+                if (title.includes(searchInput)) {
+                    course.style.display = '';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
+

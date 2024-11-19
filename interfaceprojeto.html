@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: 
+                linear-gradient(to bottom, rgba(252, 255, 252, 0.5), rgba(2, 133, 37, 0.5)), 
+                url('imagens/fundo.png') no-repeat center center;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: rgba(253, 250, 250, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 290px;
+        }
+        .logo {
+            width: 320px;
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .email-input, .email-btn {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .email-input {
+            border: 1px solid #ccc;
+        }
+        .email-btn {
+            background-color: #028525;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .email-btn:hover {
+            background-color: #02641b;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 55;
+            border-bottom: 1px solid #ccc;
+        }
+        .divider:not(:empty)::before {
+            margin-right: .25em;
+        }
+        .divider:not(:empty)::after {
+            margin-left: .668em;
+        }
+        .google-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            color: #757575;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .google-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        .forgot-password {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .forgot-password:hover {
+            background-color: #333;
+        }
+        .terms {
+            font-size: 12px;
+            color: #757575;
+        }
+        .terms a {
+            color: #028525;
+            text-decoration: none;
+        }
+        .professor-login {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .professor-login:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <!-- Atualização do caminho para a página de login do professor -->
+    <a href="loginprof.html" class="professor-login">Login do Professor</a>
+
+    <div class="container">
+        <img src="imagens/foto.png" alt="Logo do Site" class="logo">
+        <div class="description">Coloque seu e-mail para se cadastrar</div>
+        <input type="email" class="email-input" placeholder="Seu e-mail">
+        <a href="interfacehome.html">
+            <button class="email-btn">Cadastrar-se com o e-mail</button>
+        </a>
+        <div class="divider">ou continue com</div>
+        <button class="google-btn">Continuar com Google</button>
+        <button class="forgot-password">Esqueceu sua senha?</button>
+        <div class="terms">
+            Clicando aqui, você concorda com nossos <a href="#">Termos de serviço</a> e nossa <a href="#">Política de privacidade</a>.
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login do Diretor</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: 
+                linear-gradient(to bottom, rgba(252, 255, 252, 0.5), rgba(2, 133, 37, 0.5)), 
+                url('imagens/fundo.png') no-repeat center center;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: rgba(253, 250, 250, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 290px;
+        }
+        .logo {
+            width: 320px;
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .cpf-input, .cpf-btn {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .cpf-input {
+            border: 1px solid #ccc;
+        }
+        .cpf-btn {
+            background-color: #028525;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .cpf-btn:hover {
+            background-color: #02641b;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+    <script>
+        function validarCPF() {
+            const cpfInput = document.getElementById("cpf");
+            const cpf = cpfInput.value;
+
+            // Verifica se o CPF possui 11 dígitos numéricos
+            if (/^\d{11}$/.test(cpf)) {
+                window.location.href = "interfacehome.html"; // Redireciona para interfacehome.html
+            } else {
+                alert("Por favor, insira um CPF válido com 11 dígitos.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Botão de voltar -->
+    <a href="interfaceprojeto.html" class="back-button">Voltar</a>
+
+    <div class="container">
+        <img src="imagens/foto.png" alt="Logo do Site" class="logo">
+        <div class="description">Digite seu CPF para acessar</div>
+        <!-- Campo de CPF configurado para aceitar apenas números -->
+        <input type="text" id="cpf" class="cpf-input" placeholder="Seu CPF" maxlength="11" oninput="this.value = this.value.replace(/\D/g, '')">
+        <button class="cpf-btn" onclick="validarCPF()">Login com CPF</button>
+    </div>
+</body>
+</html>
